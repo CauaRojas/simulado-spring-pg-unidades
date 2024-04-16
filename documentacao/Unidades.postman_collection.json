@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "824e2a1b-2ff4-4f4a-aae0-240444e71abb",
+		"name": "Unidades",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34313609"
+	},
+	"item": [
+		{
+			"name": "localhost/usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"joaosilva\",\r\n    \"password\": \"123joaosilva\",\r\n    \"pessoa\": {\r\n        \"nome\": \"João\",\r\n        \"sobrenome: \"Silva\",\r\n        \"email\": \"joaosilva@email.com\",\r\n        \"tipo\": \"PF\",\r\n        \"nascimento\": \"2000-12-12\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "localhost/usuario",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/usuario?username=joaosilva&pessoaId=1&pessoaNome=João&pessoaSobrenome=Silva&pessoaNascimento=2000-12-12&pessoaTipo=PF&pessoaEmail=joaosilva@email.com",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"usuario"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "joaosilva"
+						},
+						{
+							"key": "pessoaId",
+							"value": "1"
+						},
+						{
+							"key": "pessoaNome",
+							"value": "João"
+						},
+						{
+							"key": "pessoaSobrenome",
+							"value": "Silva"
+						},
+						{
+							"key": "pessoaNascimento",
+							"value": "2000-12-12"
+						},
+						{
+							"key": "pessoaTipo",
+							"value": "PF"
+						},
+						{
+							"key": "pessoaEmail",
+							"value": "joaosilva@email.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/usuario/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/usuario/1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"usuario",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/unidade",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Osasco01\",\r\n    \"sigla\": \"os1\",\r\n    \"descricao\": \"Unidade sede de Osasco\" \r\n}"
+				},
+				"url": {
+					"raw": "localhost/unidade",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"unidade"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/unidade",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/unidade?nome=Osasco01&sigla=os1&macro=null",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"unidade"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Osasco01"
+						},
+						{
+							"key": "sigla",
+							"value": "os1"
+						},
+						{
+							"key": "macro",
+							"value": "null"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/unidade/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/unidade/1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"unidade",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/chefe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"substituto\": false,\r\n    \"inicio\": \"2018-03-22\",\r\n    \"fim\": \"2025-01-01\",\r\n    \"usuario\": {\r\n        \"id\": 1\r\n    },\r\n    \"unidade\": {\r\n        \"id\": 1\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "localhost/chefe",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"chefe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/chefe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/chefe?usuario=1&susbstitudo=false&unidade=1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"chefe"
+					],
+					"query": [
+						{
+							"key": "usuario",
+							"value": "1"
+						},
+						{
+							"key": "susbstitudo",
+							"value": "false"
+						},
+						{
+							"key": "unidade",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/chefe/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/chefe/1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"chefe",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
