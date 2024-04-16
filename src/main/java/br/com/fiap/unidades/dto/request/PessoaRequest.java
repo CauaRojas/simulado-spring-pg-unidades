@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public record PessoaRequest (
@@ -20,5 +21,5 @@ public record PessoaRequest (
     @NotNull(message = "Tipo é obrigatório")
     Tipo tipo,
     @NotNull(message = "Data de nascimento é obrigatória")
-    LocalDateTime nascimento
+    LocalDate nascimento
 ){}
