@@ -44,7 +44,7 @@ public class PessoaService implements ServiceDTO<Pessoa, PessoaRequest, PessoaRe
     public List<Pessoa> findAll() {
         return repo.findAll();
     }
-;
+
     @Override
     public List<Pessoa> findAll(Example<Pessoa> example) {
         return repo.findAll(example);

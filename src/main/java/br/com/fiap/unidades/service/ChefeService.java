@@ -1,11 +1,8 @@
 package br.com.fiap.unidades.service;
 
 import br.com.fiap.unidades.dto.reponse.ChefeResponse;
-import br.com.fiap.unidades.dto.reponse.UnidadeResponse;
 import br.com.fiap.unidades.dto.request.ChefeRequest;
-import br.com.fiap.unidades.dto.request.UnidadeRequest;
 import br.com.fiap.unidades.entity.Chefe;
-import br.com.fiap.unidades.entity.Unidade;
 import br.com.fiap.unidades.repository.ChefeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
