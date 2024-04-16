@@ -18,6 +18,7 @@ import java.time.LocalDate;
         @UniqueConstraint(name = "UK_PESSOA_EMAIL",columnNames = "NM_EMAIL")
 
 })
+@Entity
 public class Pessoa {
 
     @Id

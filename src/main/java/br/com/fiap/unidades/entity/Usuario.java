@@ -29,7 +29,7 @@ public class Usuario {
     @Column(name = "DS_SENHA")
     private String password;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(
             name = "PESSOA",
             referencedColumnName = "ID_PESSOA",

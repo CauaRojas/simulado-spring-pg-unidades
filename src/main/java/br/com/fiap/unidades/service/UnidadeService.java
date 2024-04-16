@@ -26,7 +26,7 @@ public class UnidadeService implements ServiceDTO<Unidade, UnidadeRequest, Unida
                     .build();
         }
 
-        var macro = new UnidadeService().findById(r.macro().id());
+        var macro = repo.findById(r.macro().id()).orElse(null);
         if(Objects.isNull(macro)){
             return null;
         }
@@ -42,6 +42,7 @@ public class UnidadeService implements ServiceDTO<Unidade, UnidadeRequest, Unida
     public UnidadeResponse toResponse(Unidade e) {
         if(Objects.isNull(e)) return null;
         return UnidadeResponse.builder()
+                .id(e.getId())
                 .nome(e.getNome())
                 .descricao(e.getDescricao())
                 .sigla(e.getSigla())

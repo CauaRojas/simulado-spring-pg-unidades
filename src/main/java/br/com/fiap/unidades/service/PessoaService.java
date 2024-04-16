@@ -32,6 +32,7 @@ public class PessoaService implements ServiceDTO<Pessoa, PessoaRequest, PessoaRe
     public PessoaResponse toResponse(Pessoa e) {
         if(Objects.isNull(e)) return null;
         return PessoaResponse.builder()
+                .id(e.getId())
                 .nome(e.getNome())
                 .tipo(e.getTipo())
                 .nascimento(e.getNascimento())
