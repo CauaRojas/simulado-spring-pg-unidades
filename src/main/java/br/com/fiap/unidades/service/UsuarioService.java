@@ -9,6 +9,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class UsuarioService implements ServiceDTO<Usuario, UsuarioRequest, UsuarioResponse>{
@@ -26,6 +27,7 @@ public class UsuarioService implements ServiceDTO<Usuario, UsuarioRequest, Usuar
 
     @Override
     public UsuarioResponse toResponse(Usuario e) {
+        if(Objects.isNull(e)) return null;
         return UsuarioResponse.builder()
                 .username(e.getUsername())
                 .pessoa(new PessoaService().toResponse(e.getPessoa())).build();

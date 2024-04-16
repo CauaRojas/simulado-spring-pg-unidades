@@ -40,6 +40,7 @@ public class UnidadeService implements ServiceDTO<Unidade, UnidadeRequest, Unida
 
     @Override
     public UnidadeResponse toResponse(Unidade e) {
+        if(Objects.isNull(e)) return null;
         return UnidadeResponse.builder()
                 .nome(e.getNome())
                 .descricao(e.getDescricao())

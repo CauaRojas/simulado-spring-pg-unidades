@@ -39,26 +39,34 @@ public class ChefeService implements ServiceDTO<Chefe, ChefeRequest, ChefeRespon
 
     @Override
     public ChefeResponse toResponse(Chefe e) {
-        return null;
+        if(Objects.isNull(e)) return null;
+
+        return ChefeResponse.builder()
+                .id(e.getId())
+                .fim(e.getFim())
+                .inicio(e.getInicio())
+                .usuario(new UsuarioService().toResponse(e.getUsuario()))
+                .unidade(new UnidadeService().toResponse(e.getUnidade()))
+                .build();
     }
 
     @Override
     public List<Chefe> findAll() {
-        return List.of();
+        return repo.findAll();
     }
 
     @Override
     public List<Chefe> findAll(Example<Chefe> example) {
-        return List.of();
+        return repo.findAll(example);
     }
 
     @Override
     public Chefe findById(Long id) {
-        return null;
+        return repo.findById(id).orElse(null);
     }
 
     @Override
     public Chefe save(Chefe e) {
-        return null;
+        return repo.save(e);
     }
 }
