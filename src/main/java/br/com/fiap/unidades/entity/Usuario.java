@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "TB_USUARIO", uniqueConstraints = {
         @UniqueConstraint(name = "UK_USUARIO_USERNAME", columnNames = "NM_USUARIO")
 })
+@Entity
 public class Usuario {
 
     @Id
