@@ -1,7 +1,7 @@
 {
-	"id": "fc4b7bf3-10db-48ef-b4cb-ebb516caadba",
+	"id": "9ad59ccb-f4c0-43c4-a91c-05f5a6b3406e",
 	"name": "Unidades",
-	"timestamp": "2024-04-16T23:55:55.502Z",
+	"timestamp": "2024-04-17T14:33:31.780Z",
 	"collection_id": "34313609-824e2a1b-2ff4-4f4a-aae0-240444e71abb",
 	"folder_id": 0,
 	"environment_id": "0",
@@ -9,14 +9,14 @@
 	"delay": 0,
 	"persist": true,
 	"status": "finished",
-	"startedAt": "2024-04-16T23:55:54.439Z",
+	"startedAt": "2024-04-17T14:33:30.625Z",
 	"totalFail": 0,
 	"results": [
 		{
 			"id": "6e071799-d485-444e-b84a-fbe5604309ef",
 			"name": "localhost/usuario",
 			"url": "localhost/usuario",
-			"time": 332,
+			"time": 374,
 			"responseCode": {
 				"code": 201,
 				"name": "Created"
@@ -24,7 +24,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				332
+				374
 			],
 			"allTests": [
 				{}
@@ -34,7 +34,7 @@
 			"id": "71819b7c-57cc-466b-becd-c40422d3b211",
 			"name": "localhost/usuario",
 			"url": "localhost/usuario?username=joaosilva&pessoaId=1&pessoaNome=João&pessoaSobrenome=Silva&pessoaNascimento=2000-12-12&pessoaTipo=PF&pessoaEmail=joaosilva@email.com",
-			"time": 181,
+			"time": 179,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -42,7 +42,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				181
+				179
 			],
 			"allTests": [
 				{}
@@ -52,7 +52,7 @@
 			"id": "704044d3-0483-489a-a557-97b8828b2959",
 			"name": "localhost/usuario/{id}",
 			"url": "localhost/usuario/1",
-			"time": 9,
+			"time": 31,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -60,7 +60,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				9
+				31
 			],
 			"allTests": [
 				{}
@@ -70,7 +70,7 @@
 			"id": "fd6e8a9b-5498-4134-a0a0-07fab3cb4f2e",
 			"name": "localhost/unidade",
 			"url": "localhost/unidade",
-			"time": 29,
+			"time": 53,
 			"responseCode": {
 				"code": 201,
 				"name": "Created"
@@ -78,7 +78,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				29
+				53
 			],
 			"allTests": [
 				{}
@@ -88,7 +88,7 @@
 			"id": "eb1e45c3-9939-41c6-8f74-800f93245539",
 			"name": "localhost/unidade",
 			"url": "localhost/unidade?nome=Osasco01&sigla=os1",
-			"time": 8,
+			"time": 40,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -96,7 +96,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				8
+				40
 			],
 			"allTests": [
 				{}
@@ -106,7 +106,7 @@
 			"id": "8da94967-fa88-47dd-a244-161ffdee93fd",
 			"name": "localhost/unidade 2",
 			"url": "localhost/unidade",
-			"time": 15,
+			"time": 39,
 			"responseCode": {
 				"code": 201,
 				"name": "Created"
@@ -114,7 +114,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				15
+				39
 			],
 			"allTests": [
 				{}
@@ -124,7 +124,7 @@
 			"id": "edfec6b2-ef58-41f6-83c9-8369863795ac",
 			"name": "localhost/unidade only macro",
 			"url": "localhost/unidade?macroId=1",
-			"time": 7,
+			"time": 33,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -132,7 +132,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				7
+				33
 			],
 			"allTests": [
 				{}
@@ -142,42 +142,6 @@
 			"id": "1f87aac7-e463-4ccd-868d-b36a3165584b",
 			"name": "localhost/unidade/{id}",
 			"url": "localhost/unidade/1",
-			"time": 5,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {},
-			"testPassFailCounts": {},
-			"times": [
-				5
-			],
-			"allTests": [
-				{}
-			]
-		},
-		{
-			"id": "83b87ac5-c92b-41f3-ad54-56e810578e23",
-			"name": "localhost/chefe",
-			"url": "localhost/chefe",
-			"time": 26,
-			"responseCode": {
-				"code": 201,
-				"name": "Created"
-			},
-			"tests": {},
-			"testPassFailCounts": {},
-			"times": [
-				26
-			],
-			"allTests": [
-				{}
-			]
-		},
-		{
-			"id": "fde1c256-c3b2-496d-8d2b-98632295b17f",
-			"name": "localhost/chefe",
-			"url": "localhost/chefe?usuarioId=1&unidadeId=1",
 			"time": 15,
 			"responseCode": {
 				"code": 200,
@@ -193,10 +157,28 @@
 			]
 		},
 		{
-			"id": "83ec34b1-5e1c-4b21-8a91-936bd3a6a0e6",
-			"name": "localhost/chefe/{id}",
-			"url": "localhost/chefe/1",
-			"time": 8,
+			"id": "83b87ac5-c92b-41f3-ad54-56e810578e23",
+			"name": "localhost/chefe",
+			"url": "localhost/chefe",
+			"time": 77,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				77
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "fde1c256-c3b2-496d-8d2b-98632295b17f",
+			"name": "localhost/chefe",
+			"url": "localhost/chefe?usuarioId=1&unidadeId=1",
+			"time": 39,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -204,7 +186,25 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				8
+				39
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "83ec34b1-5e1c-4b21-8a91-936bd3a6a0e6",
+			"name": "localhost/chefe/{id}",
+			"url": "localhost/chefe/1",
+			"time": 22,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				22
 			],
 			"allTests": [
 				{}
@@ -212,7 +212,7 @@
 		}
 	],
 	"count": 1,
-	"totalTime": 635,
+	"totalTime": 902,
 	"collection": {
 		"requests": [
 			{
