@@ -1,12 +1,11 @@
 package br.com.fiap.unidades.service;
 
 import br.com.fiap.unidades.dto.reponse.ChefeResponse;
-import br.com.fiap.unidades.dto.reponse.UnidadeResponse;
 import br.com.fiap.unidades.dto.request.ChefeRequest;
-import br.com.fiap.unidades.dto.request.UnidadeRequest;
 import br.com.fiap.unidades.entity.Chefe;
-import br.com.fiap.unidades.entity.Unidade;
 import br.com.fiap.unidades.repository.ChefeRepository;
+import br.com.fiap.unidades.repository.UnidadeRepository;
+import br.com.fiap.unidades.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
@@ -19,12 +18,18 @@ public class ChefeService implements ServiceDTO<Chefe, ChefeRequest, ChefeRespon
     @Autowired
     private ChefeRepository repo;
 
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private UnidadeRepository unidadeRepository;
+
 
     @Override
     public Chefe toEntity(ChefeRequest r) {
 
-        var usuario = new UsuarioService().findById(r.usuario().id());
-        var unidade = new UnidadeService().findById(r.unidade().id());
+        var usuario = usuarioRepository.findById(r.usuario().id()).orElse(null);
+        var unidade = unidadeRepository.findById(r.unidade().id()).orElse(null);
 
         if(Objects.isNull(usuario) || Objects.isNull(unidade)) {
             return null;
@@ -32,6 +37,7 @@ public class ChefeService implements ServiceDTO<Chefe, ChefeRequest, ChefeRespon
         return Chefe.builder()
                 .fim(r.fim())
                 .inicio(r.inicio())
+                .substituto(r.substituto())
                 .usuario(usuario)
                 .unidade(unidade)
                 .build();
@@ -39,26 +45,35 @@ public class ChefeService implements ServiceDTO<Chefe, ChefeRequest, ChefeRespon
 
     @Override
     public ChefeResponse toResponse(Chefe e) {
-        return null;
+        if(Objects.isNull(e)) return null;
+
+        return ChefeResponse.builder()
+                .id(e.getId())
+                .fim(e.getFim())
+                .inicio(e.getInicio())
+                .substituto(e.getSubstituto())
+                .usuario(new UsuarioService().toResponse(e.getUsuario()))
+                .unidade(new UnidadeService().toResponse(e.getUnidade()))
+                .build();
     }
 
     @Override
     public List<Chefe> findAll() {
-        return List.of();
+        return repo.findAll();
     }
 
     @Override
     public List<Chefe> findAll(Example<Chefe> example) {
-        return List.of();
+        return repo.findAll(example);
     }
 
     @Override
     public Chefe findById(Long id) {
-        return null;
+        return repo.findById(id).orElse(null);
     }
 
     @Override
     public Chefe save(Chefe e) {
-        return null;
+        return repo.save(e);
     }
 }

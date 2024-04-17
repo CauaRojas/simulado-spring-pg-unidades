@@ -1,6 +1,7 @@
 package br.com.fiap.unidades.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,6 +19,7 @@ import java.time.LocalDateTime;
 @Table(name = "TB_CHEFE", uniqueConstraints = {
         @UniqueConstraint(name = "UK_CHEFE_UNIDADE", columnNames = {"UNIDADE", "DT_FIM"}),
 })
+@Entity
 public class Chefe {
 
     @Id

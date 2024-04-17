@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "TB_USUARIO", uniqueConstraints = {
         @UniqueConstraint(name = "UK_USUARIO_USERNAME", columnNames = "NM_USUARIO")
 })
+@Entity
 public class Usuario {
 
     @Id
@@ -28,7 +29,7 @@ public class Usuario {
     @Column(name = "DS_SENHA")
     private String password;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(
             name = "PESSOA",
             referencedColumnName = "ID_PESSOA",

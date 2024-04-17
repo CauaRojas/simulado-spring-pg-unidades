@@ -13,7 +13,12 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"joaosilva\",\r\n    \"password\": \"123joaosilva\",\r\n    \"pessoa\": {\r\n        \"nome\": \"João\",\r\n        \"sobrenome: \"Silva\",\r\n        \"email\": \"joaosilva@email.com\",\r\n        \"tipo\": \"PF\",\r\n        \"nascimento\": \"2000-12-12\"\r\n    }\r\n}"
+					"raw": "{\r\n    \"username\": \"joaosilva\",\r\n    \"password\": \"123joaosilva\",\r\n    \"pessoa\": {\r\n        \"nome\": \"João\",\r\n        \"sobrenome\": \"Silva\",\r\n        \"email\": \"joaosilva@email.com\",\r\n        \"tipo\": \"PF\",\r\n        \"nascimento\": \"2000-12-12\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
 					"raw": "localhost/usuario",
@@ -99,7 +104,12 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome\": \"Osasco01\",\r\n    \"sigla\": \"os1\",\r\n    \"descricao\": \"Unidade sede de Osasco\" \r\n}"
+					"raw": "{\r\n    \"nome\": \"Osasco01\",\r\n    \"sigla\": \"os1\",\r\n    \"descricao\": \"Unidade sede de Osasco\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
 					"raw": "localhost/unidade",
@@ -119,7 +129,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost/unidade?nome=Osasco01&sigla=os1&macro=null",
+					"raw": "localhost/unidade?nome=Osasco01&sigla=os1",
 					"host": [
 						"localhost"
 					],
@@ -134,10 +144,65 @@
 						{
 							"key": "sigla",
 							"value": "os1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/unidade 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Osasco02\",\r\n    \"sigla\": \"os2\",\r\n    \"descricao\": \"Unidade sede de Osasco\",\r\n    \"macro\": {\r\n        \"id\": 1\r\n    }\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/unidade",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"unidade"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/unidade only macro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/unidade?macroId=1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"unidade"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Osasco01",
+							"disabled": true
 						},
 						{
-							"key": "macro",
-							"value": "null"
+							"key": "sigla",
+							"value": "os1",
+							"disabled": true
+						},
+						{
+							"key": "macroId",
+							"value": "1"
 						}
 					]
 				}
@@ -169,7 +234,12 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"substituto\": false,\r\n    \"inicio\": \"2018-03-22\",\r\n    \"fim\": \"2025-01-01\",\r\n    \"usuario\": {\r\n        \"id\": 1\r\n    },\r\n    \"unidade\": {\r\n        \"id\": 1\r\n    }\r\n}"
+					"raw": "{\r\n    \"substituto\": true,\r\n    \"inicio\": \"2018-03-22T00:00:00\",\r\n    \"fim\": \"2025-01-01T00:00:00\",\r\n    \"usuario\": {\r\n        \"id\": 1\r\n    },\r\n    \"unidade\": {\r\n        \"id\": 1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
 					"raw": "localhost/chefe",
@@ -189,7 +259,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost/chefe?usuario=1&susbstitudo=false&unidade=1",
+					"raw": "localhost/chefe?usuarioId=1&unidadeId=1",
 					"host": [
 						"localhost"
 					],
@@ -198,15 +268,16 @@
 					],
 					"query": [
 						{
-							"key": "usuario",
+							"key": "usuarioId",
 							"value": "1"
 						},
 						{
-							"key": "susbstitudo",
-							"value": "false"
+							"key": "substituto",
+							"value": "false",
+							"disabled": true
 						},
 						{
-							"key": "unidade",
+							"key": "unidadeId",
 							"value": "1"
 						}
 					]
